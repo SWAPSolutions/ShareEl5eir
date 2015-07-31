@@ -1,0 +1,61 @@
+.org-side {
+	width:25%;
+}
+
+.org-main {
+	width:75%;
+}
+
+.org-container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 10px;
+}
+
+.org-col1 {
+	padding: 2%;
+	/*width: 40%;*/
+}
+
+.org-col2 {	
+	padding: 3%;
+	/*width: 50%;*/
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.org-row {
+	margin: 10px;
+	padding: 10px;
+}
+
+.org-image {
+	margin: 10px;
+	width:90%;
+	height:90%;
+}
+
+.org-name {
+	font-size: 140%;
+}
+
+.org-info {
+	margin: 10px;
+}
+
+.org-circle {
+	margin-left: 20%;
+	width:50%;
+	height:50%;
+}
+
+.post-image {
+    float: left;
+    /*margin-left: -10px;*/
+    width: 100px;
+}
