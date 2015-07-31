@@ -18,7 +18,8 @@
 	/*width: 40%;*/
 }
 
-.org-col2 {	
+.org-col2 {
+	text-align: center;
 	padding: 3%;
 	/*width: 50%;*/
 }
@@ -31,7 +32,9 @@
 
 .org-row {
 	margin: 10px;
-	padding: 10px;
+	padding: 15px;
+	width: 75%;
+	border-radius: 10px;
 }
 
 .org-image {
@@ -54,8 +57,37 @@
 	height:50%;
 }
 
+.org-post {
+	margin: 10px;
+	border-bottom: 1px solid rgba(180, 180,   180, 1);
+    margin-bottom: 20px;
+}
+
+.post-header {
+	margin: 10px;
+	font-size: 150%;
+}
+
 .post-image {
-    float: left;
-    /*margin-left: -10px;*/
     width: 100px;
+    margin: 10px;
+}
+
+.post-col1 {
+	text-align: center;
+	width: 18%;
+}
+
+.post-col2 {
+	width: 65%;
+}
+
+.post-col3 {
+	padding: 2%;
+	width: 10%;
+}
+
+.post-btn {
+	padding-right: 30px;
+	padding-left: 30px;
 }
