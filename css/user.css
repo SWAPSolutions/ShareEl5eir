@@ -1,0 +1,22 @@
+.user-image {
+	padding-top:10px;
+	padding-bottom: 10px;		
+}
+
+.subs{
+	list-style-type: none;
+	height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+.user-side-tab{
+	background-color: #FFCC00;
+	padding-top:10px; 
+}
+.user-name{
+	font-size: 20px;
+	font-family: "Arial",Georgia,Serif;
+	color: white;
+}
+.user-main {
+}
