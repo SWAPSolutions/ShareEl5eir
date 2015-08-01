@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :cloths
-  resources :medicines
-  resources :users
   resources :organizations
+  resources :users do
+    resources :cloths
+    resources :medicines
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
