@@ -1,3 +1,6 @@
+.user-base {
+	background-color: #8BA446;
+}
 .user-image {
 	padding-top:10px;
 	padding-bottom: 10px;		
@@ -19,24 +22,28 @@
 }
 
 .trophies-bar{
-	background-color: #FFD700;
+	background-color: #cc8400;
 	display: inline-block;
 }
 .user-side-tab{
 	background-color: #FFCC00;
+	border: 5px solid #ffa500;
 }
 .user-posts{
 	background-color: #FFAC00;
+}
+.user-post{
+	border: 2px solid #b27300;
 }
 .user-name{
 	font-size: 20px;
 	font-family: "Arial",Georgia,Serif;
 	color: white;
 }
-.user-base {
-	background-color: #2E8B57;
-}
+
 .post-head{
+	padding-left: 15px;
+	padding-top: 15px;
 	text-transform:capitalize;
 	font-weight: bold;
 	font-size: 35px;
