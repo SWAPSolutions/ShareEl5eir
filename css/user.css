@@ -9,9 +9,24 @@
     max-height: 200px;
     overflow-x: hidden;
 }
+
+.trophies-list{
+	max-height: 200px;	
+    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    list-style-type: none;
+}
+
+.trophies-bar{
+	background-color: #FFCC00;
+	display: inline-block;
+}
 .user-side-tab{
 	background-color: #FFCC00;
-	padding-top:10px; 
+}
+.user-posts{
+	background-color: #FFAC00;
 }
 .user-name{
 	font-size: 20px;
