@@ -1,10 +1,19 @@
 class ClothsController < ApplicationController
   before_action :set_cloth, only: [:show, :edit, :update, :destroy]
+  before_action :get_user
+  before_action :check_auth , only:[:edit , :update , :destroy]  
 
+
+  # Check if the current user is logged in and is the owner of the game
+  def check_auth
+    if current_user == nil || @user.id != current_user.id
+      redirect_to root_path , alert: "Can't Access A Game That Does not belong to you."
+    end
+  end
   # GET /cloths
   # GET /cloths.json
   def index
-    @cloths = Cloth.all
+    @cloths = @user.cloths
   end
 
   # GET /cloths/1
@@ -14,7 +23,7 @@ class ClothsController < ApplicationController
 
   # GET /cloths/new
   def new
-    @cloth = Cloth.new
+    @cloth = @user.cloths.new
   end
 
   # GET /cloths/1/edit
@@ -24,8 +33,9 @@ class ClothsController < ApplicationController
   # POST /cloths
   # POST /cloths.json
   def create
-    @cloth = Cloth.new(cloth_params)
-
+    @cloth = @user.cloths.new(cloths_params)
+    @cloth.user_id = @user.id
+    @cloth.donated = false
     respond_to do |format|
       if @cloth.save
         format.html { redirect_to @cloth, notice: 'Cloth was successfully created.' }
@@ -64,11 +74,12 @@ class ClothsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cloth
-      @cloth = Cloth.find(params[:id])
+      @user = User.find(params[:user_id])
+      @cloth = @user.cloths.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cloth_params
-      params.require(:cloth).permit(:size, :color, :user_id, :quantity, :description, :donated)
+      params.require(:cloth).permit(:size, :color, :quantity, :description)
     end
 end
