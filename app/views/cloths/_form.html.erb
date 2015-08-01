@@ -1,4 +1,4 @@
-<%= form_for(@cloth) do |f| %>
+<%= form_for([@user , @cloth]) do |f| %>
   <% if @cloth.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cloth.errors.count, "error") %> prohibited this cloth from being saved:</h2>

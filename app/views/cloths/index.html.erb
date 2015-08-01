@@ -24,9 +24,9 @@
         <td><%= cloth.quantity %></td>
         <td><%= cloth.description %></td>
         <td><%= cloth.donated %></td>
-        <td><%= link_to 'Show', cloth %></td>
-        <td><%= link_to 'Edit', edit_cloth_path(cloth) %></td>
-        <td><%= link_to 'Destroy', cloth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@user , cloth] %></td>
+        <td><%= link_to 'Edit', edit_user_cloth_path(@user , cloth) %></td>
+        <td><%= link_to 'Destroy', [@user , cloth], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Cloth', new_cloth_path %>
+<%= link_to 'New Cloth', new_user_cloth_path %>

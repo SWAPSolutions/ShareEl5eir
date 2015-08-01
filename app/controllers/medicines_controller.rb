@@ -42,7 +42,7 @@ class MedicinesController < ApplicationController
     @medicine.donated = false
     respond_to do |format|
       if @medicine.save
-        format.html { redirect_to @medicine, notice: 'Medicine was successfully created.' }
+        format.html { redirect_to [@user ,@medicine] , notice: 'Medicine was successfully created.' }
         format.json { render :show, status: :created, location: @medicine }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class MedicinesController < ApplicationController
   def update
     respond_to do |format|
       if @medicine.update(medicine_params)
-        format.html { redirect_to @medicine, notice: 'Medicine was successfully updated.' }
+        format.html { redirect_to [@user , @medicine], notice: 'Medicine was successfully updated.' }
         format.json { render :show, status: :ok, location: @medicine }
       else
         format.html { render :edit }

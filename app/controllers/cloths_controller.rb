@@ -10,6 +10,10 @@ class ClothsController < ApplicationController
       redirect_to root_path , alert: "Can't Access A Game That Does not belong to you."
     end
   end
+
+  def get_user
+    @user = User.find(params[:user_id ])
+  end
   # GET /cloths
   # GET /cloths.json
   def index
@@ -33,12 +37,12 @@ class ClothsController < ApplicationController
   # POST /cloths
   # POST /cloths.json
   def create
-    @cloth = @user.cloths.new(cloths_params)
+    @cloth = @user.cloths.new(cloth_params)
     @cloth.user_id = @user.id
     @cloth.donated = false
     respond_to do |format|
       if @cloth.save
-        format.html { redirect_to @cloth, notice: 'Cloth was successfully created.' }
+        format.html { redirect_to [@user ,@cloth] , notice: 'Cloth was successfully created.' }
         format.json { render :show, status: :created, location: @cloth }
       else
         format.html { render :new }
@@ -52,7 +56,7 @@ class ClothsController < ApplicationController
   def update
     respond_to do |format|
       if @cloth.update(cloth_params)
-        format.html { redirect_to @cloth, notice: 'Cloth was successfully updated.' }
+        format.html { redirect_to [@user ,@cloth], notice: 'Cloth was successfully updated.' }
         format.json { render :show, status: :ok, location: @cloth }
       else
         format.html { render :edit }
