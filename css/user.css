@@ -19,7 +19,7 @@
 }
 
 .trophies-bar{
-	background-color: #FFCC00;
+	background-color: #FFD700;
 	display: inline-block;
 }
 .user-side-tab{
@@ -33,5 +33,13 @@
 	font-family: "Arial",Georgia,Serif;
 	color: white;
 }
-.user-main {
+.user-base {
+	background-color: #2E8B57;
+}
+.post-head{
+	text-transform:capitalize;
+	font-weight: bold;
+	font-size: 35px;
+	font-family: "Arial",Georgia,Serif;
+	color: white;
 }
