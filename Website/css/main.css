@@ -155,5 +155,15 @@ div.social {
     text-align: center;
 }
 
+div.signup {
+    width:50%;
+    margin: auto;
+    padding-top: 5%;
+}
+
+div.footer {
+    margin-top: 5%;
+}
+
 
 
