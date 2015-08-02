@@ -49,6 +49,7 @@ body {
     }
 }
 div.uppersection{
+    margin-top: 3%;
     padding-top: 4%;
     background-color: #D8D8D8;
 }
@@ -66,36 +67,38 @@ font-size:40px;
 color:#fff;
 line-height:200px;
 text-align:center;
-background:#000
+background:#195719
 }
 
 .rectangle
 {
-margin-left: 20%;    
+margin-left: 30%;    
 margin-top: 15%;    
 vertical-align: middle;
-width:50%;
+width:40%;
 height:12%;
 font-size:20px;
-border-radius: 5%;
-color:#fff;
+border: 2px solid #195719;
+border-radius: 10%;
+color:black;
 line-height:70px;
 text-align:center;
-background:red;
+background: #99FF99;
 }
 .rectangle2
 {
 margin-left: 30%;
 margin-top: 15%;    
 vertical-align: middle;
-width:50%;
+width:40%;
 height:12%;
 font-size:20px;
-border-radius: 5%;
-color:#fff;
+border: 2px solid #195719;
+border-radius: 10%;
+color:black;
 line-height:70px;
 text-align:center;
-background:red;
+background:#99FF99;
 }
 
 div.middlesection{
@@ -155,14 +158,16 @@ div.social {
     text-align: center;
 }
 
-div.signup {
-    width:50%;
-    margin: auto;
-    padding-top: 5%;
-}
-
 div.footer {
     margin-top: 5%;
+}
+
+div.signup {
+    margin-left: 38%;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 1%; 
 }
 
 
