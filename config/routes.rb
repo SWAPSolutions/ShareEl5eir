@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :organizations
-  resources :users do
+  resources :members do
     resources :cloths
     resources :medicines
   end

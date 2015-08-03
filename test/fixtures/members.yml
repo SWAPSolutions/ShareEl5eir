@@ -6,9 +6,9 @@ one:
   role: 1
   bio: MyText
   phone: MyString
-  address: MyText
-  photo: MyText
-  device_id: 1
+  address: MyString
+  photo: MyString
+  devise_id: 1
 
 two:
   f_name: MyString
@@ -16,6 +16,6 @@ two:
   role: 1
   bio: MyText
   phone: MyString
-  address: MyText
-  photo: MyText
-  device_id: 1
+  address: MyString
+  photo: MyString
+  devise_id: 1

@@ -6,18 +6,18 @@ class ClothsController < ApplicationController
 
   # Check if the current user is logged in and is the owner of the game
   def check_auth
-    if current_user == nil || @user.id != current_user.id
+    if current_user == nil || @member.id != current_user.id
       redirect_to root_path , alert: "Can't Access A Game That Does not belong to you."
     end
   end
 
   def get_user
-    @user = User.find(params[:user_id ])
+    @member = Member.find(params[:user_id ])
   end
   # GET /cloths
   # GET /cloths.json
   def index
-    @cloths = @user.cloths
+    @cloths = @member.cloths
   end
 
   # GET /cloths/1
@@ -27,7 +27,7 @@ class ClothsController < ApplicationController
 
   # GET /cloths/new
   def new
-    @cloth = @user.cloths.new
+    @cloth = @member.cloths.new
   end
 
   # GET /cloths/1/edit
@@ -37,12 +37,12 @@ class ClothsController < ApplicationController
   # POST /cloths
   # POST /cloths.json
   def create
-    @cloth = @user.cloths.new(cloth_params)
-    @cloth.user_id = @user.id
+    @cloth = @member.cloths.new(cloth_params)
+    @cloth.user_id = @member.id
     @cloth.donated = false
     respond_to do |format|
       if @cloth.save
-        format.html { redirect_to [@user ,@cloth] , notice: 'Cloth was successfully created.' }
+        format.html { redirect_to [@member ,@cloth] , notice: 'Cloth was successfully created.' }
         format.json { render :show, status: :created, location: @cloth }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class ClothsController < ApplicationController
   def update
     respond_to do |format|
       if @cloth.update(cloth_params)
-        format.html { redirect_to [@user ,@cloth], notice: 'Cloth was successfully updated.' }
+        format.html { redirect_to [@member ,@cloth], notice: 'Cloth was successfully updated.' }
         format.json { render :show, status: :ok, location: @cloth }
       else
         format.html { render :edit }
@@ -78,8 +78,8 @@ class ClothsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cloth
-      @user = User.find(params[:user_id])
-      @cloth = @user.cloths.find(params[:id])
+      @member = Member.find(params[:user_id])
+      @cloth = @member.cloths.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

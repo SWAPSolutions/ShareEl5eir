@@ -5,29 +5,29 @@ class MedicinesController < ApplicationController
 
     # Check if the current user is logged in and is the owner of the game
   def check_auth
-    if current_user == nil || @user.id != current_user.id
+    if current_user == nil || @member.id != current_user.id
       redirect_to root_path , alert: "Can't Access A Game That Does not belong to you."
     end
   end
 
   def get_user
-    @user = User.find(params[:user_id])
+    @member = Member.find(params[:user_id])
   end
   # GET /medicines
   # GET /medicines.json
   def index
-    @medicines = @user.medicines
+    @medicines = @member.medicines
   end
 
   # GET /medicines/1
   # GET /medicines/1.json
   def show
-    @medicine = @user.medicines.find(params[:id])
+    @medicine = @member.medicines.find(params[:id])
   end
 
   # GET /medicines/new
   def new
-    @medicine = @user.medicines.new
+    @medicine = @member.medicines.new
   end
 
   # GET /medicines/1/edit
@@ -37,12 +37,12 @@ class MedicinesController < ApplicationController
   # POST /medicines
   # POST /medicines.json
   def create
-    @medicine = @user.medicines.new(medicine_params)
-    @medicine.user_id = @user.id
+    @medicine = @member.medicines.new(medicine_params)
+    @medicine.user_id = @member.id
     @medicine.donated = false
     respond_to do |format|
       if @medicine.save
-        format.html { redirect_to [@user ,@medicine] , notice: 'Medicine was successfully created.' }
+        format.html { redirect_to [@member ,@medicine] , notice: 'Medicine was successfully created.' }
         format.json { render :show, status: :created, location: @medicine }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class MedicinesController < ApplicationController
   def update
     respond_to do |format|
       if @medicine.update(medicine_params)
-        format.html { redirect_to [@user , @medicine], notice: 'Medicine was successfully updated.' }
+        format.html { redirect_to [@member , @medicine], notice: 'Medicine was successfully updated.' }
         format.json { render :show, status: :ok, location: @medicine }
       else
         format.html { render :edit }
@@ -78,8 +78,8 @@ class MedicinesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_medicine
-      @user = User.find(params[:user_id])
-      @medicine = @user.medicines.find(params[:id])
+      @member = Member.find(params[:user_id])
+      @medicine = @member.medicines.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Member < ActiveRecord::Base
 	has_many :medicines , dependent: :destroy
 	has_many :cloths , dependent: :destroy
 end
