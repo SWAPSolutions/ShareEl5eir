@@ -1,0 +1,174 @@
+html,
+body {
+    height: 100% /* not necessary if you have a fixed height on the feature area */
+}
+/* ------ featurette */
+.featurette {
+    margin-top: 3%;
+    height: 30%; /* set a pixel height and then remove the body,html height */
+    vertical-align: middle;
+    color: #fff;
+}
+.featurette-inner {
+    vertical-align: middle;
+}
+.featurette .search {
+    max-width: 40%; /*max width of search*/
+    margin-left: 30%;
+}
+.no-margin-top {
+    margin-top: 0
+}
+
+
+/* ------ form-control-lg */
+.form-control-lg {
+    min-height: 46px;
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: normal;
+}
+
+
+/* ------ disjointed form group custom */
+.featurette .search.has-button .btn {
+    margin-top: 5px;
+    width: 100%;
+}
+@media (min-width:480px) { 
+    .featurette .search.has-button .form-group {
+        position: relative;
+        padding-right: 99px; /*space for button*/
+    }
+    .featurette .search.has-button .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        margin: 0;
+    }
+}
+div.uppersection{
+    margin-top: 3%;
+    padding-top: 4%;
+    background-color: #D8D8D8;
+}
+
+div.header {
+    margin-bottom: 0%;
+}
+
+.circle
+{
+width:200px;
+height:200px;
+border-radius:50%;
+font-size:40px;
+color:#fff;
+line-height:200px;
+text-align:center;
+background:#195719
+}
+
+.rectangle
+{
+margin-left: 30%;    
+margin-top: 15%;    
+vertical-align: middle;
+width:40%;
+height:12%;
+font-size:20px;
+border: 2px solid #195719;
+border-radius: 10%;
+color:black;
+line-height:70px;
+text-align:center;
+background: #99FF99;
+}
+.rectangle2
+{
+margin-left: 30%;
+margin-top: 15%;    
+vertical-align: middle;
+width:40%;
+height:12%;
+font-size:20px;
+border: 2px solid #195719;
+border-radius: 10%;
+color:black;
+line-height:70px;
+text-align:center;
+background:#99FF99;
+}
+
+div.middlesection{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+nav.navbar-inverse {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 0;
+}
+.navbar-brand {
+    font-family: Papyrus;
+}
+
+.img-unknown{
+    border-radius: 50%;
+    border:1px solid #021a40;
+}
+
+#container {
+    margin-top: 20px;
+    padding: 0.5%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    width: 80%;
+    overflow: auto;
+    height: auto;
+    white-space:nowrap;
+}
+
+.contents {
+    width: auto;
+    height: auto;
+    display:inline-block;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+h1.title {
+    font-family: Hannotate TC;
+    text-align: center;
+    font-size: 40px;
+    font-style: bold;
+}
+div.titles {
+    border-top: 1px solid #eee9e9;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 2%;
+}
+
+div.social {
+    text-align: center;
+}
+
+div.footer {
+    margin-top: 5%;
+}
+
+div.signup {
+    margin-left: 38%;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 1%; 
+}
+
+
+
