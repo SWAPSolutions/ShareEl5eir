@@ -12,8 +12,8 @@ before_filter :configure_account_update_params, only: [:update]
     current_registrant = params[:user][:email]
     super
     current_registrant_id = User.find_by_email(current_registrant).id
-    if params[:f_name] == nil
-        org = Organization.new(organization_params)
+    if params[:user][:f_name] == nil
+        org = Organization.new(params[:oragnization])
         org.name=params[:name]
         org.description=params[:description]
         org.website=params[:website]
