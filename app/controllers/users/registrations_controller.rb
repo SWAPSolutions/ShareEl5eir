@@ -1,33 +1,37 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
+before_filter :configure_permitted_parameters
+
 
   #GET /resource/sign_up
   def new
     super
   end
 
+
+
   #POST /resource
   def create
     current_registrant = params[:user][:email]
     super
     current_registrant_id = User.find_by_email(current_registrant).id
-    if params[:user][:f_name] == nil
+    if params[:user][:f_name] == ""
         org = Organization.new
-        org.name=params[:name]
-        org.description=params[:description]
-        org.website=params[:website]
-        org.photo=params[:photo]
+        org.name=params[:user][:name]
+        org.description=params[:user][:description]
+        org.website=params[:user][:website]
+        org.photo=params[:user][:photo]
         org.device_id= current_registrant_id
         org.save
     else
       member = Member.new
-      member.f_name = params[:f_name]
-      member.l_name = params[:l_name]
-      member.bio = params[:bio]
-      member.phone = params[:phone]
-      member.address = params[:address]
-      member.photo = params[:photo]
+      member.f_name = params[:user][:f_name]
+      member.l_name = params[:user][:l_name]
+      member.bio = params[:user][:bio]
+      member.phone = params[:user][:phone]
+      member.address = params[:user][:address]
+      member.photo = params[:user][:photo]
       member.save
     end
   end
@@ -62,6 +66,11 @@ before_filter :configure_account_update_params, only: [:update]
   def configure_sign_up_params
     devise_parameter_sanitizer.for(:sign_up) << :attribute
   end
+
+    def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up).push(:f_name, :l_name,:bio,:phone,:address,:photo, :organization)
+  end
+
 
   #If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
