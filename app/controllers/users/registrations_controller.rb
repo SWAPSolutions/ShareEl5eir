@@ -14,20 +14,21 @@ before_filter :configure_account_update_params, only: [:update]
     current_registrant_id = User.find_by_email(current_registrant).id
     if params[:user][:f_name] == nil
         org = Organization.new
-        org.name=params[:name]
-        org.description=params[:description]
-        org.website=params[:website]
-        org.photo=params[:photo]
+        org.name=params[:user][:name]
+        org.description=params[:user][:description]
+        org.website=params[:user][:website]
+        org.photo=params[:user][:photo]
         org.device_id= current_registrant_id
         org.save
     else
       member = Member.new
-      member.f_name = params[:f_name]
-      member.l_name = params[:l_name]
-      member.bio = params[:bio]
-      member.phone = params[:phone]
-      member.address = params[:address]
-      member.photo = params[:photo]
+      member.f_name = params[:user][:f_name]
+      member.l_name = params[:user][:l_name]
+      member.bio = params[:user][:bio]
+      member.phone = params[:user][:phone]
+      member.address = params[:user][:address]
+      member.photo = params[:user][:photo]
+      member.devise_id = current_registrant_id
       member.save
     end
   end
