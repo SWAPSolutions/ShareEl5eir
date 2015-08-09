@@ -3,9 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-    attr_accessor :photo_file_name
-    
-   has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url =>  "/assets/users/:id/:style/:basename.:extension"
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+         
 end
+# /assets/users/:id/:style/:basename.:extension
