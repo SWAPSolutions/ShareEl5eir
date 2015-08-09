@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806120608) do
+ActiveRecord::Schema.define(version: 20150809132729) do
 
   create_table "cloths", force: :cascade do |t|
     t.string   "size"
@@ -45,8 +45,12 @@ ActiveRecord::Schema.define(version: 20150806120608) do
     t.string   "address"
     t.string   "photo"
     t.integer  "devise_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -55,8 +59,12 @@ ActiveRecord::Schema.define(version: 20150806120608) do
     t.string   "website"
     t.text     "photo"
     t.integer  "device_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
