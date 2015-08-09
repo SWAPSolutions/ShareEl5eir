@@ -17,7 +17,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @organization.photo %>
+  <%= image_tag @organization.photo.url(:medium) %>
 </p>
 
 <p>
