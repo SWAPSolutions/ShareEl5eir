@@ -21,6 +21,7 @@ before_filter :configure_permitted_parameters
         org.description=params[:user][:description]
         org.website=params[:user][:website]
         org.photo=params[:user][:photo]
+        org.document=params[:user][:document]
         org.device_id= current_registrant_id
         org.save
     else

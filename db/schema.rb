@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809132729) do
+ActiveRecord::Schema.define(version: 20150810181541) do
 
   create_table "cloths", force: :cascade do |t|
     t.string   "size"
     t.string   "color"
-    t.integer  "user_id"
+    t.integer  "member_id"
     t.integer  "quantity"
     t.text     "description"
     t.boolean  "donated"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150809132729) do
     t.integer  "quantity"
     t.text     "description"
     t.boolean  "donated"
-    t.integer  "user_id"
+    t.integer  "member_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -59,12 +59,17 @@ ActiveRecord::Schema.define(version: 20150809132729) do
     t.string   "website"
     t.text     "photo"
     t.integer  "device_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.string   "document"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,6 +95,7 @@ ActiveRecord::Schema.define(version: 20150809132729) do
     t.string   "description"
     t.string   "website"
     t.string   "photo"
+    t.string   "document"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

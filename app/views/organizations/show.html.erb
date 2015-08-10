@@ -19,7 +19,11 @@
   <strong>Photo:</strong>
   <%= image_tag @organization.photo.url(:medium) %>
 </p>
-
+  
+  <p>
+    <%= link_to "Download", @organization.document.url(:original, false) %>
+  </p>
+ 
 <p>
   <strong>Device:</strong>
   <%= @organization.device_id %>
