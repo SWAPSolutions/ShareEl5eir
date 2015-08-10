@@ -38,7 +38,7 @@ class ClothsController < ApplicationController
   # POST /cloths.json
   def create
     @cloth = @member.cloths.new(cloth_params)
-    @cloth.user_id = @member.id
+    @cloth.member_id = @member.id
     @cloth.donated = false
     respond_to do |format|
       if @cloth.save
@@ -78,7 +78,7 @@ class ClothsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cloth
-      @member = Member.find(params[:user_id])
+      @member = Member.find(params[:member_id])
       @cloth = @member.cloths.find(params[:id])
     end
 
