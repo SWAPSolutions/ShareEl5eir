@@ -38,7 +38,7 @@ class ClothsController < ApplicationController
   # POST /cloths.json
   def create
     @cloth = @member.cloths.new(cloth_params)
-    @cloth.user_id = @member.id
+    @cloth.member_id = @member.id
     @cloth.donated = false
     respond_to do |format|
       if @cloth.save
