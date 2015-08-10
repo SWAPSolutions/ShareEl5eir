@@ -10,7 +10,7 @@ class MedicinesController < ApplicationController
     end
   end
 
-  def get_user
+  def get_member
     @member = Member.find(params[:member_id])
   end
   # GET /medicines
@@ -38,7 +38,7 @@ class MedicinesController < ApplicationController
   # POST /medicines.json
   def create
     @medicine = @member.medicines.new(medicine_params)
-    @medicine.user_id = @member.id
+    @medicine.member_id = @member.id
     @medicine.donated = false
     respond_to do |format|
       if @medicine.save
