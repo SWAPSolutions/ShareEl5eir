@@ -78,7 +78,7 @@ class ClothsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cloth
-      @member = Member.find(params[:user_id])
+      @member = Member.find(params[:member_id])
       @cloth = @member.cloths.find(params[:id])
     end
 

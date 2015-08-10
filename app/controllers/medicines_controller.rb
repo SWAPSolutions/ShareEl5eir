@@ -78,7 +78,7 @@ class MedicinesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_medicine
-      @member = Member.find(params[:user_id])
+      @member = Member.find(params[:member_id])
       @medicine = @member.medicines.find(params[:id])
     end
 
