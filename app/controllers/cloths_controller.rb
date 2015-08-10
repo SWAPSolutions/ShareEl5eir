@@ -1,6 +1,6 @@
 class ClothsController < ApplicationController
   before_action :set_cloth, only: [:show, :edit, :update, :destroy]
-  before_action :get_user
+  before_action :get_member
   before_action :check_auth , only:[:edit , :update , :destroy]  
 
 
@@ -11,8 +11,8 @@ class ClothsController < ApplicationController
     end
   end
 
-  def get_user
-    @member = Member.find(params[:user_id ])
+  def get_member
+    @member = Member.find(params[:member_id])
   end
   # GET /cloths
   # GET /cloths.json

@@ -1,6 +1,6 @@
 class MedicinesController < ApplicationController
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
-  before_action :get_user
+  before_action :get_member
   before_action :check_auth , only:[:edit , :update , :destroy]
 
     # Check if the current user is logged in and is the owner of the game
@@ -11,7 +11,7 @@ class MedicinesController < ApplicationController
   end
 
   def get_user
-    @member = Member.find(params[:user_id])
+    @member = Member.find(params[:member_id])
   end
   # GET /medicines
   # GET /medicines.json
