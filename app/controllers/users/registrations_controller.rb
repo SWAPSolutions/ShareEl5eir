@@ -1,8 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+require 'mail'
 before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
-before_filter :configure_permitted_parameters
-
+before_filter :configure_permitted_parameters           
   #GET /resource/sign_up
   def new
     super
@@ -16,6 +16,22 @@ before_filter :configure_permitted_parameters
     super
     current_registrant_id = User.find_by_email(current_registrant).id
     if params[:user][:f_name] == ""
+        options = { :address      => "smtp.gmail.com",
+            :port                 => 587,
+            :domain               => 'your.domain.com',
+            :user_name            => 'your username',
+            :password             => 'your password',
+            :authentication       => 'plain',
+            :enable_starttls_auto => true  }
+        Mail.defaults do
+          delivery_method :smtp, options
+        end
+        Mail.deliver do
+          to 'ahmedwael2002@gmail.com'
+          from 'omarsaleh0106@gmail.com'
+          subject 'test email'
+          body 'This is a test.'
+        end
         org = Organization.new
         org.name=params[:user][:name]
         org.description=params[:user][:description]
