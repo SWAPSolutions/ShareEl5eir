@@ -18,20 +18,14 @@ before_filter :configure_permitted_parameters
     if params[:user][:f_name] == ""
         options = { :address      => "smtp.gmail.com",
             :port                 => 587,
-            :domain               => 'your.domain.com',
-            :user_name            => 'your username',
-            :password             => 'your password',
+            :user_name            => 'shareelkheir@gmail.com',
+            :password             => 'swap1234',
             :authentication       => 'plain',
             :enable_starttls_auto => true  }
         Mail.defaults do
           delivery_method :smtp, options
         end
-        Mail.deliver do
-          to 'ahmedwael2002@gmail.com'
-          from 'omarsaleh0106@gmail.com'
-          subject 'test email'
-          body 'This is a test.'
-        end
+        
         org = Organization.new
         org.name=params[:user][:name]
         org.description=params[:user][:description]
@@ -40,6 +34,14 @@ before_filter :configure_permitted_parameters
         org.document=params[:user][:document]
         org.device_id= current_registrant_id
         org.save
+
+        Mail.deliver do
+          to 'omarsaleh0106@gmail.com'
+          from 'shareelkheir@gmail.com'
+          subject 'test email'
+          body 'This is a test.'
+          add_file :filename => 'Documents', :content => File.read(Rails.root.to_s + '/public'+org.document.url(:orginal , false).to_s)
+        end
     else
       member = Member.new
       member.f_name = params[:user][:f_name]
