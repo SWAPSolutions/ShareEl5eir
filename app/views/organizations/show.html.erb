@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -30,4 +30,113 @@
 </p>
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
+<%= link_to 'Back', organizations_path %> -->
+
+<!-- Base page -->
+    <div class="container org-bg">
+
+        <!-- Side bar -->
+        <div class='col-xs-4 org-side'>
+
+          <!-- First container -->
+          <div class='org-container bg-success'>
+            <!-- <img class='org-image img-thumbnail' src='https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg' > -->
+            <%= image_tag @organization.photo.url(:medium), :class => 'org-image img-thumbnail center-block img-responsive' %>
+            <div class='org-info'>
+              <h3 class='org-name'><%= @organization.name %></h3>
+              <p><%= @organization.description %></p>
+            </div>
+          </div>
+
+          <!-- Second container -->
+          <div class='org-container bg-success'>
+            <p>
+              <strong>Website:</strong>
+              <%= link_to(@organization.website, @organization.website) %></p>
+            <p>
+              <%= link_to "Download", @organization.document.url(:original, false) %>
+            </p>
+
+            <p>
+              <strong>Device:</strong>
+              <%= @organization.device_id %>
+            </p>
+
+            <%= link_to 'Edit', edit_organization_path(@organization) %> |
+            <%= link_to 'Back', organizations_path %>
+          </div>
+
+        </div>
+
+        <!-- Main page -->
+        <div class='col-xs-8 org-main'>
+
+          <!-- First container -->
+          <div class='org-container bg-success row'>
+
+            <!-- Circle columne -->
+            <div class='col-sm-5 col-md-6 org-col1'>
+              <img src='https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg' class='img-circle org-circle'>
+            </div>
+
+            <!-- Data columne -->
+            <div class='col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0 org-col2'>
+              <div class='bg-warning org-row'>Row 1 </div>
+              <div class='bg-warning org-row'>Row 2 </div>
+              <div class='bg-warning org-row'>Row 3 </div>
+            </div>
+          </div>
+
+          <!-- Second container -->
+          <div class='org-container  bg-success row'>
+
+            <!-- Posts -->
+            <div class='org-post row'>
+
+              <div class = 'post-header'>This is the Title of the Post</div>
+              <div class='col-md-3 post-col1'>
+                <img src="https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg" class = 'post-image'>
+                <!-- <div class='post-date'>(date of creation)</div> -->
+              </div>
+
+              <p class='col-md-6 post-col2'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+
+              <div class='col-md-3 post-col3'>
+                <button type="button" class="btn btn-default post-btn">Check</button>
+              </div>
+
+            </div>
+
+            <div class='org-post row'>
+
+              <div class = 'post-header'>This is the Title of the Post</div>
+              <div class='col-md-3 post-col1'>
+                <img src="https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg" class = 'post-image'>
+              </div>
+
+              <p class='col-md-6 post-col2'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+
+              <div class='col-md-3 post-col3'>
+                <button type="button" class="btn btn-default post-btn">Check</button>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+    </div>
