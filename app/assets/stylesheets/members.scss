@@ -1,3 +1,56 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-base {
+	background-color: #8BA446;
+}
+.user-image {
+	padding-top:10px;
+	padding-bottom: 10px;		
+}
+
+.subs{
+	list-style-type: none;
+	height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.trophies-list{
+	max-height: 200px;	
+    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    list-style-type: none;
+}
+
+.trophies-bar{
+	background-color: #cc8400;
+	display: inline-block;
+}
+.user-side-tab{
+	background-color: #EEC900;
+	border: 5px solid #ffa500;
+}
+.user-posts{
+	background-color: #FFAC00;
+}
+.user-post{
+	border: 2px solid #b27300;
+}
+.user-name{
+	font-size: 20px;
+	font-family: "Arial",Georgia,Serif;
+	color: white;
+}
+
+.post-head{
+	padding-left: 15px;
+	padding-top: 15px;
+	text-transform:capitalize;
+	font-weight: bold;
+	font-size: 35px;
+	font-family: "Arial",Georgia,Serif;
+	color: white;
+}

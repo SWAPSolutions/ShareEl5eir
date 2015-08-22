@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>F name:</strong>
@@ -41,4 +41,135 @@
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+<%= link_to 'Back', members_path %> -->
+
+<!-- Base page -->
+    <div class="container org-bg org-base">
+
+        <!-- Side bar -->
+        <div class='col-xs-4 org-side'>
+
+          <!-- First container -->
+          <div class='org-container bg-success'>
+            <!-- <img class='org-image img-thumbnail' src='https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg' > -->
+            <%= image_tag @member.photo.url(:medium), :class => 'org-image img-thumbnail center-block img-responsive' %>
+            <div class='org-info'>
+              <h3 class='org-name text-center'><%= @member.f_name %> <%= @member.l_name %></h3>
+              <p><strong>Bio:</strong>
+              <%= @member.bio %></p>
+            </div>
+          </div>
+
+          <!-- Second container -->
+          <div class='org-container bg-success'>
+            <p>
+              <strong>Role:</strong>
+              <%= @member.role %>
+            </p>
+            <p>
+              <strong>Phone:</strong>
+              <%= @member.phone %>
+            </p>
+            <p>
+              <strong>Address:</strong>
+              <%= @member.address %>
+            </p>
+
+            <%= link_to 'Edit', edit_member_path(@member) %> |
+            <%= link_to 'Back', members_path %>
+          </div>
+
+          <!-- Third container -->
+          <div class='org-container bg-success'>
+            <p class=""><Strong>Subscriptions</Strong>
+            (no. of subscriptions)
+            </p>
+            <ul class="subs list-group scrollable-menu" role="menu">
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+              <li class="col-xs-4"> <img class='user-image img-responsive img-circle' src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg"></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Main page -->
+        <div class='col-xs-8 org-main'>
+
+          <!-- First container -->
+          <div class='org-container bg-success row'>
+            <p class="text-center"><Strong>Trophies</Strong></p>
+            <ul class="trophies-list scrollable-menu" role="menu">
+             <li class="col-xs-3"> <img class='user-image img-responsive img-circle' src="http://www2.psd100.com/ppp/2013/11/0601/Golden-trophy-icon-1106112624.png"></li>
+             <li class="col-xs-3"> <img class='user-image img-responsive img-circle' src="http://www2.psd100.com/ppp/2013/11/0601/Golden-trophy-icon-1106112624.png"></li>
+             <li class="col-xs-3"> <img class='user-image img-responsive img-circle' src="http://www2.psd100.com/ppp/2013/11/0601/Golden-trophy-icon-1106112624.png"></li>
+             <li class="col-xs-3"> <img class='user-image img-responsive img-circle' src="http://www2.psd100.com/ppp/2013/11/0601/Golden-trophy-icon-1106112624.png"></li>
+             <!-- <li class="col-xs-3"> <img class='user-image img-responsive img-circle' src="http://www2.psd100.com/ppp/2013/11/0601/Golden-trophy-icon-1106112624.png"></li> -->
+           </ul>
+         </div>
+
+          <!-- Second container -->
+          <div class='org-container  bg-success row'>
+
+            <!-- Posts -->
+            <div class='org-post row'>
+
+              <div class = 'post-header'>This is the Title of the Post</div>
+              <div class='col-md-3 post-col1'>
+                <!-- <img src="https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg" class = 'post-image'> -->
+                <%= image_tag @member.photo.url, :class => 'post-image img-thumbnail center-block img-responsive' %>
+                <!-- <div class='post-date'>(date of creation)</div> -->
+              </div>
+
+              <p class='col-md-6 post-col2'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </p>
+
+              <div class='col-md-3 post-col3'>
+                <button type="button" class="btn btn-default post-btn center-block">Check</button>
+              </div>
+
+            </div>
+
+            <div class="line-separator"></div>
+
+            <div class='org-post row'>
+
+              <div class = 'post-header'>This is the Title of the Post</div>
+              <div class='col-md-3 post-col1'>
+                <!-- <img src="https://0.s3.envato.com/files/70005032/sea260%20_pv.jpg" class = 'post-image'> -->
+                <%= image_tag @member.photo.url, :class => 'post-image img-thumbnail center-block img-responsive' %>
+                <!-- <div class='post-date'>(date of creation)</div> -->
+              </div>
+
+              <p class='col-md-6 post-col2'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </p>
+
+              <div class='col-md-3 post-col3'>
+                <button type="button" class="btn btn-default post-btn center-block">Check</button>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+    </div>
+
