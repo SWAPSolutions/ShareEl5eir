@@ -1,0 +1,167 @@
+---
+layout: default
+title: Sign Up!
+---
+
+<div class="form">
+
+    <ul class="tab-group">
+        <li class="tab active"><a href="#ind">Individual?</a></li>
+        <li class="tab"><a href="#org">Organization?</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="ind">   
+            <h1 class="signup">Join Us!</h1>
+
+            <form action="/" method="post">
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            First Name<span class="req">*</span>
+                        </label><BR><BR>
+                        <input type="text" required autocomplete="off" />
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Last Name<span class="req">*</span>
+                        </label><BR><BR>
+                        <input type="text"required autocomplete="off"/>
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Email<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="email"required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Set A Password<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="password"required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Address<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="address"required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Mobile No.
+                    </label> <BR><BR>
+                    <input type="mobile" autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Bio
+                    </label><BR><BR>
+                    <input type="bio" autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Profile Picture
+                    </label><BR><BR>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-success btn-file">
+                                Browse&hellip; <input type="file" multiple>
+                            </span>
+                        </span>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <button type="submit" class="button button-block"/>Get Started</button>
+
+            </form>
+
+        </div>  <!-- ind -->
+
+
+        <div id="org">   
+            <h1 class="signup">Join Us!</h1>
+
+            <form action="/" method="post">
+
+                <div class="field-wrap">
+                    <label>
+                        Organization's Name<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="text" required autocomplete="off" />
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Email<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="email"required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Set A Password<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="password"required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Address<span class="req">*</span>
+                    </label><BR><BR>
+                    <input type="address"required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Phone No.
+                    </label> <BR><BR>
+                    <input type="mobile" autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Bio
+                    </label><BR><BR>
+                    <input type="bio" autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Website
+                    </label><BR><BR>
+                    <input type="website" autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Organization's Logo
+                    </label><BR><BR>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-success btn-file">
+                                Browse&hellip; <input type="file" multiple>
+                            </span>
+                        </span>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <button type="submit" class="button button-block"/>Get Started</button>
+
+            </form>
+
+        </div>   <!-- org -->
+
+    </div><!-- tab-content -->
+
+</div> <!-- /form -->
