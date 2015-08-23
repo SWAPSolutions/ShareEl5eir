@@ -36,7 +36,7 @@ before_filter :configure_permitted_parameters
         org.save
 
         Mail.deliver do
-          to 'omarsaleh0106@gmail.com'
+          to ''
           from 'shareelkheir@gmail.com'
           subject 'test email'
           body 'This is a test.'
