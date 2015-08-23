@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @medicine.name %>
+</p>
+
+<p>
+  <strong>Exp date:</strong>
+  <%= @medicine.exp_date %>
+</p>
+
+<p>
+  <strong>Concentration:</strong>
+  <%= @medicine.concentration %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @medicine.quantity %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @medicine.description %>
+</p>
+
+<p>
+  <strong>Donated:</strong>
+  <%= @medicine.donated %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_medicine_path(member , @medicine) %> |
+<%= link_to 'Back', member_medicines_path %>
