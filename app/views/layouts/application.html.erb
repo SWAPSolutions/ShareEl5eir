@@ -17,11 +17,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <div class="header">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="<%= root_path %>"> Share El-Kheir</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="<%= user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div> 
+<!-- /header -->
+<%= yield %>
+<!-- footer -->
+
+<div class="footer">
+	<div class="row titles">
+		<div class="col-sm-4">
+			<p class = "text-muted" style="margin-top:2%;"><strong>&copy; 2015 ShareElKheir</strong></p>
+		</div>
+		<div class="col-sm-4 social">
+<%= link_to image_tag("facebook.png"), "http://www.mysite.com/" %>
+		</div>
+		<div class="col-sm-4">
+			<p class="pull-right" style="margin-top:2%;"><small><a href="/about/siteinfo.html" title="About this site"><strong>About this site<strong></a></small></p>
+		</div>
+	</div>
+
+</div> 
+<!-- footer -->
 
 </body>
 </html>
