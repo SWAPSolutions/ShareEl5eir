@@ -20,7 +20,7 @@
                         <label>
                             First Name<span class="req">*</span>
                         </label><BR><BR>
-                    <%= f.text_field :f_name %>
+                    <%= f.text_field :f_name, autofocus: true  %>
                     </div>
 
                     <div class="field-wrap">
@@ -35,7 +35,7 @@
                     <label>
                         Email<span class="req">*</span>
                     </label><BR><BR>
-                  <%= f.email_field :email, autofocus: true %>
+                  <%= f.email_field :email%>
                 </div>
 
                 <div class="field-wrap">
@@ -99,14 +99,14 @@
                     <label>
                         Organization's Name<span class="req">*</span>
                     </label><BR><BR>
-                    <%= f.text_field :f_name %>
+                    <%= f.text_field :f_name, autofocus: true %>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Email<span class="req">*</span>
                     </label><BR><BR>
-                  <%= f.email_field :email, autofocus: true %>
+                  <%= f.email_field :email %>
                 </div>
 
                 <div class="field-wrap">
@@ -159,21 +159,7 @@
                         <input type="text" class="form-control" readonly>
                     </div>
                 </div>
-                                <div class="field-wrap">
-                    <label>
-                        Organization's Logo
-                    </label><BR><BR>
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <span class="btn btn-success btn-file">
-                                Browse&hellip; <%= f.file_field :document %>
-                            </span>
-                        </span>
-                        <input type="text" class="form-control" readonly>
-                    </div>
-                </div>
-
-                <button type="submit" class="button button-block"/><%= f.submit "Get Started" %></button>
+                <button type="submit" class="button button-block"><%= f.submit "Get Started" %></button>
 
             </form>
 

@@ -295,7 +295,7 @@ div.login :-ms-input-placeholder {
   position: relative;
   z-index: 2;
 }
-.login form input {
+.login form input.zeyad {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -314,10 +314,10 @@ div.login :-ms-input-placeholder {
           transition-duration: 0.25s;
   font-weight: 300;
 }
-.login form input:hover {
+.login form input.zeyad:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.login form input:focus {
+.login form input.zeyad:focus {
   background-color: white;
   width: 300px;
   color: #53e3a6;
