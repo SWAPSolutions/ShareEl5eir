@@ -1,14 +1,12 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+<% title "Login" %>
 <div class="login">
 <div class="firstclass">
     <div class="secondclass">
       <h1><strong>Welcome Back!</strong></h1>
-      <form class="form">
-        <%= f.email_field :email, autofocus: true, :class => "zeyad" %>
-        <%= f.password_field :password, autocomplete: "off" %>
-
-    <%= f.submit "Log in" %>
+        <%= form_for(resource, as: resource_name, :html => {class:"secondclass"}, url: session_path(resource_name)) do |f| %>
+        <%= f.email_field :email, placeholder:"Email" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder:"Password" %>        
+        <%= f.submit "Log in", class: "login-button" %>
       </form>
     </div>
 
